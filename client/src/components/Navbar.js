@@ -12,27 +12,27 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar className='navbar'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <Navbar className='nav-title' as={Link} to='/'>
             Google Books Search
-          </Navbar.Brand>
+          </Navbar>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar' className='d-flex flex-row-reverse'>
-            <Nav className='ml-auto d-flex'>
-              <Nav.Link as={Link} to='/'>
+            <Nav className='ml-auto d-flex nav-items'>
+              <Nav.Link className='buttons'as={Link} to='/'>
                 Search For Books
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
+                  <Nav.Link className='buttons' as={Link} to='/saved'>
                     See Your Books
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link className='buttons' onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link className='buttons' onClick={() => setShowModal(true)}>Login or Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

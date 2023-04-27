@@ -3,7 +3,7 @@ import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import { useMutation, useQuery } from "@apollo/client";
 
 import Auth from "../utils/auth";
-import { removeBookId } from "../utils/localStorage";
+import { deleteBookId } from "../utils/localStorage";
 import { QUERY_ME } from "../utils/queries";
 import { DELETE_BOOK } from "../utils/mutations";
 
@@ -66,7 +66,7 @@ const SavedBooks = () => {
       console.log(response, "response");
       setUserData(response.data.deleteBook.user);
       // upon success, remove book's id from localStorage
-      removeBookId(bookId);
+      deleteBookId(bookId);
     } catch (err) {
       console.error(err);
     }
@@ -81,7 +81,7 @@ const SavedBooks = () => {
     <>
       <div fluid className="text-light bg-dark p-5">
         <Container>
-          <h1>Viewing saved books!</h1>
+          <h1>Saved Books!</h1>
         </Container>
       </div>
       <Container>
@@ -112,7 +112,7 @@ const SavedBooks = () => {
                       className="btn-block btn-danger"
                       onClick={() => handleDeleteBook(book.bookId)}
                     >
-                      Delete this Book!
+                      Delete!
                     </Button>
                   </Card.Body>
                 </Card>

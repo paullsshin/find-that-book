@@ -103,7 +103,7 @@ const SearchBooks = () => {
     <>
       <div className="text-light bg-dark p-5">
         <Container>
-          <h1>Search for Books!</h1>
+          <h1>Browse Through Our Library</h1>
           <Form onSubmit={handleFormSubmit}>
             {/* <Form.Row> */}
             <Col xs={12} md={8}>
@@ -113,12 +113,12 @@ const SearchBooks = () => {
                 onChange={(e) => setSearchInput(e.target.value)}
                 type="text"
                 size="lg"
-                placeholder="Search for a book"
+                placeholder="Search Book Title Here"
               />
             </Col>
             <Col xs={12} md={4}>
               <Button type="submit" variant="success" size="lg">
-                Submit Search
+                Search
               </Button>
             </Col>
             {/* </Form.Row> */}
@@ -126,7 +126,7 @@ const SearchBooks = () => {
         </Container>
       </div>
 
-      <Container>
+      <Container className="search-container">
         <h2 className="pt-5">
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
@@ -136,7 +136,7 @@ const SearchBooks = () => {
           {searchedBooks.map((book) => {
             return (
               <Col md="4">
-                <Card key={book.bookId} border="dark">
+                <Card className="card" key={book.bookId} border="dark">
                   {book.image ? (
                     <Card.Img
                       src={book.image}
@@ -146,14 +146,14 @@ const SearchBooks = () => {
                   ) : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
-                    <p className="small">Authors: {book.authors}</p>
+                    <p>By: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
                     {Auth.loggedIn() && (
                       <Button
                         disabled={savedBookIds?.some(
                           (savedBookId) => savedBookId === book.bookId
                         )}
-                        className="btn-block btn-info"
+                        className="btn-block btn-info buttons"
                         onClick={() => handleSaveBook(book.bookId)}
                       >
                         {savedBookIds?.some(

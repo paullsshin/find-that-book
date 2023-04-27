@@ -1,17 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Russo+One&display=swap');
+
+* {
+  font-family: 'Righteous', cursive;
+}
+
 body {
-  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(
+    90deg, rgb(129, 129, 160), rgb(124, 93, 93)
+  );
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+.navbar {
+  background-color: rgb(76, 92, 126);
 }
 
-.small {
-  font-weight: 300;
-  font-style: italic;
+.nav-title {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(28, 27, 31);
+}
+
+.nav-items {
+  font-size: 20px;
+}
+
+.buttons {
+  background-color: rgb(95, 155, 175);
+  margin-right: 10px;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.buttons:hover {
+  background-color: lightgreen;
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 50px;
+}
+
+.card {
+  border: 5px solid red;
+  margin-bottom: 10px;
 }

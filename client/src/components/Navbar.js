@@ -38,6 +38,7 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {/* tiny code to deploy with heroku test */}
       {/* set modal data up */}
       <Modal
         size='lg'

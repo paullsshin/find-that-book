@@ -14,9 +14,9 @@ const AppNavbar = () => {
     <>
       <Navbar className='navbar'>
         <Container fluid>
-          <Navbar className='nav-title' as={Link} to='/'>
-            Google Books Search
-          </Navbar>
+          <div className='nav-title'>
+            Find That Book
+          </div>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar' className='d-flex flex-row-reverse'>
             <Nav className='ml-auto d-flex nav-items'>
@@ -27,7 +27,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link className='buttons' as={Link} to='/saved'>
-                    See Your Books
+                    Saved Books
                   </Nav.Link>
                   <Nav.Link className='buttons' onClick={Auth.logout}>Logout</Nav.Link>
                 </>
